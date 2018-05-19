@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body{
-  background-color: #929497;
+  background-color: #fffce8;
 }
 #wrap,form,input[type="submit"]{
   margin: 0 auto;
@@ -46,12 +46,25 @@ input[type="submit"]{
   background-color: #f7f4f0;
 }
 
+input[type="submit"]:hover{
+  background-color: #d0d2d3;
+}
+input:focus{
+  box-shadow: 0 0 30px #049aab;
+}
 form{
   padding: 30px;
   width: 70%;
   background-color: #f15d2a;
 }
 
-#add-item{
+#add-item,input[type="submit"],#delete-item{
   cursor: pointer;
+}
+
+#add-item{
+  color: #333;
+}
+#add-item:hover{
+  color:#f7f4f0
 }
