@@ -59,13 +59,24 @@ form{
   background-color: #f15d2a;
 }
 
-#add-item,input[type="submit"],#delete-item{
+.add-item,input[type="submit"],.delete-item{
   cursor: pointer;
 }
 
-#add-item{
+.add-item, .delete-item{
   color: #333;
+  display: block;
+  text-decoration: none;
 }
-#add-item:hover{
+.add-item:hover, .delete-item:hover{
   color:#f7f4f0
+}
+.delete-item{
+  float: right;
+  margin-bottom: 10px;
+}
+
+hr{
+  clear: both;
+  margin: 10px 0;
 }
