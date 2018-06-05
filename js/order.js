@@ -5,10 +5,7 @@ var productForm = document.querySelectorAll('input[type="text"]');
 var productLabel = document.querySelectorAll('label');
 
 function newItem(){
-  // var hr = document.createElement('hr');
-  // form.appendChild(hr);
-
-  let container = document.createElement('div');
+  var container = document.createElement('div');
   container.className = "container";
   for(var i =2; i < productForm.length; i++){
 
@@ -21,8 +18,9 @@ function newItem(){
     container.appendChild(label);
     container.appendChild(input);
   }
+  container.appendChild(deleteButton());
   form.appendChild(container);
-   deleteButton();
+
 
 }
 
@@ -42,19 +40,31 @@ function deleteButton(){
   button.appendChild(text);
   button.href="#";
   button.className = 'delete-item';
-  form.appendChild(button);
+  return button;
+
+}
+
+function removeItem(container){
+  if(container.parentNode === form){
+  form.removeChild(container);
+  }
 }
 addItem.addEventListener('click', function(e){
     removeButtons();
     newItem();
     addButtons();
 
-    var deleteButton = document.querySelector('.delete-item');
-    let container = document.querySelector('.container');
+    let deletButtons = [];
+    let dButton = document.querySelectorAll('.delete-item')
 
-    deleteButton.addEventListener('click', function(e){
-      form.removeChild(deleteButton);
-      form.removeChild(container);
-    })
+    for (var i=0; i < dButton.length; i++){
+      deletButtons[i] = dButton[i];
+    }
+
+    for(var j = 0; j < deletButtons.length; j++){
+      deletButtons[j].addEventListener('click', function(e){
+        removeItem(e.target.parentNode);
+      });
+    }
 
 });

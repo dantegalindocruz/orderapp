@@ -45,6 +45,7 @@ input[name="quantity"]{
 input[type="submit"]{
   width: 20%;
   background-color: #f7f4f0;
+  margin-top: 1em;
 }
 
 input[type="submit"]:hover{
@@ -76,7 +77,8 @@ form{
   margin-bottom: 10px;
 }
 
-hr{
+.container{
   clear: both;
-  margin: 10px 0;
+  padding: 10px 0;
+  border-top: 1px solid #fff;
 }
