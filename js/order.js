@@ -8,7 +8,6 @@ function newItem(){
   var container = document.createElement('div');
   container.className = "container";
   for(var i =2; i < productForm.length; i++){
-
     var input = document.createElement('input');
     var label = document.createElement('label');
     var labelName = document.createTextNode(productLabel[i].innerText);
@@ -22,6 +21,20 @@ function newItem(){
   form.appendChild(container);
 
 
+}
+
+function minimize(){
+  var collapse = document.createElement('a');
+  var collapseText = document.createTextNode('minimize');
+  collapse.appendChild(collapseText);
+  return collapse;
+}
+
+function maximize(){
+  var expand = document.createElement('a');
+  var expandText = document.createTextNode('maximize');
+  expand.appendChild(expandText);
+  return collapse;
 }
 
 function addButtons(){
@@ -54,7 +67,9 @@ addItem.addEventListener('click', function(e){
     newItem();
     addButtons();
 
-    let deletButtons = [];
+    let deletButtons = [];  // var hr = document.createElement('hr');
+  // form.appendChild(hr);
+  // form.appendChild(hr);
     let dButton = document.querySelectorAll('.delete-item')
 
     for (var i=0; i < dButton.length; i++){
